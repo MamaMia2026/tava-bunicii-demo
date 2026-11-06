@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="img/hero-cremsnit-800.webp" imagesrcset="img/hero-cremsnit-800.webp 800w, img/hero-cremsnit-1400.webp 1400w" imagesizes="(max-width: 767px) 100vw, 860px" fetchpriority="high">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -57,9 +58,9 @@
     <!-- ===== 1. Hero ===== -->
     <section class="hero-sectiune">
       <div class="panel hero">
-        <div class="hero__media" aria-hidden="true">
-          <div class="hero__aburi"><span></span><span></span><span></span></div>
-          <div class="hero__tava" data-tava></div>
+        <div class="hero__media">
+          <img class="hero__poza" src="img/hero-cremsnit-1400.webp" srcset="img/hero-cremsnit-800.webp 800w, img/hero-cremsnit-1400.webp 1400w" sizes="(max-width: 767px) 100vw, 860px" width="1400" height="1217" fetchpriority="high" decoding="async" alt="Felie de cremșnit cu frișcă și zahăr pudră">
+          <div class="hero__estompare" aria-hidden="true"></div>
         </div>
         <div class="hero__text">
           <span class="chip chip--sticla hero__eticheta">Prăjituri de casă în Timișoara · din 1998</span>
@@ -283,11 +284,11 @@
         <div class="coloana"><span class="coloana__titlu">Laborator</span><span>Str. Trandafirilor 12</span><span>Giroc, jud. Timiș</span></div>
         <div class="coloana"><span class="coloana__titlu">Program</span><span>Coacem joi – sâmbătă</span><span>Ridicare 9:00 – 18:00</span></div>
         <div class="coloana"><span class="coloana__titlu">Contact</span><a href="tel:+40722198198">0722 198 198</a><span>comenzi@tavabunicii.ro</span><a href="#livrare">Zile de copt & livrare</a></div>
-        <div class="coloana"><span class="coloana__titlu">Prăjituri</span><a href="#favorite">Favoritele bunicii</a><a href="#platou">Platouri pentru evenimente</a><a href="#craciun">Cozonac de Crăciun</a></div>
+        <div class="coloana"><span class="coloana__titlu">Prăjituri</span><a href="#favorite">Favoritele bunicii</a><a href="#platou">Platouri pentru evenimente</a><a href="#craciun">Cozonac de Crăciun</a><a href="credite.html">Credite foto</a></div>
       </div>
       <div class="subsol__jos">
         <span>© 2026 Tava Bunicii · brand fictiv, creat pentru demonstrație</span>
-        <span>Machetă demo · Site realizat de <a href="https://cristianweb.ro" target="_blank" rel="noopener">CristianWeb</a></span>
+        <span><a href="credite.html">Credite foto</a> · Machetă demo · Site realizat de <a href="https://cristianweb.ro" target="_blank" rel="noopener">CristianWeb</a></span>
       </div>
     </div>
   </footer>

@@ -31,80 +31,68 @@ window.TAVA = (function () {
 
   /*
    * Cele 12 prăjituri. `bucata` = prețul pe bucată, `kg` = prețul pe kilogram.
-   * `desen` descrie ilustrația (straturile feliei, de jos în sus).
-   */
+   * Pozele sunt în img/<id>-400.webp și img/<id>-800.webp (sursele: credite-foto.json).
+     */
   const PRODUSE = [
     {
       id: "cremsnit", nume: "Cremșnit", grup: "crema", culoare: "galben", eticheta: "Cea mai comandată",
       descriere: "Foietaj cu unt, cremă de vanilie din ouă de țară și un strat de frișcă.",
       bucata: 12, kg: 85,
-      desen: { tip: "felie", straturi: [["#d9a55a", 10], ["#f6dc7a", 46], ["#fff8ea", 16], ["#d9a55a", 10]], decor: "pudra" },
     },
     {
       id: "amandine", nume: "Amandine", grup: "nuca", culoare: "coral", eticheta: "Rețeta din 1998",
       descriere: "Blat de cacao însiropat, cremă de ciocolată cu unt și glazură fondantă.",
       bucata: 11, kg: 80,
-      desen: { tip: "felie", straturi: [["#5a3220", 18], ["#8a5634", 14], ["#5a3220", 18], ["#8a5634", 14], ["#5a3220", 14]], decor: "glazura", glazura: "#f2d9a0" },
     },
     {
       id: "cozonac", nume: "Cozonac cu nucă", grup: "tara", culoare: "verde", eticheta: "Dospit 12 ore",
       descriere: "Aluat cu unt și ouă de țară, umplutură generoasă de nucă și cacao.",
       bucata: 9, kg: 70, unitateBucata: "felie",
-      desen: { tip: "cozonac" },
     },
     {
       id: "savarina", nume: "Savarine", grup: "crema", culoare: "piersica",
       descriere: "Blat pufos însiropat cu rom și portocală, umplut cu frișcă.",
       bucata: 10, kg: 78,
-      desen: { tip: "savarina" },
     },
     {
       id: "alba", nume: "Albă ca zăpada", grup: "crema", culoare: "bej",
       descriere: "Foi cu miere de salcâm și cremă de griș cu lămâie.",
       bucata: 9, kg: 68,
-      desen: { tip: "felie", straturi: [["#d8a868", 8], ["#fffaf0", 22], ["#d8a868", 8], ["#fffaf0", 22], ["#d8a868", 8]], decor: "pudra" },
     },
     {
       id: "dobos", nume: "Doboș", grup: "nuca", culoare: "maro",
       descriere: "Șase foi de pandișpan, cremă de ciocolată și capac de caramel.",
       bucata: 12, kg: 88,
-      desen: { tip: "felie", straturi: [["#f0cf8a", 7], ["#6a3b22", 6], ["#f0cf8a", 7], ["#6a3b22", 6], ["#f0cf8a", 7], ["#6a3b22", 6], ["#f0cf8a", 7], ["#6a3b22", 6], ["#c9802a", 9]], decor: "caramel" },
     },
     {
       id: "ecler", nume: "Ecler cu vanilie", grup: "crema", culoare: "mov",
       descriere: "Aluat opărit, cremă de vanilie bourbon și glazură de ciocolată.",
       bucata: 8, kg: 90,
-      desen: { tip: "ecler" },
     },
     {
       id: "mascota", nume: "Mascota", grup: "nuca", culoare: "bordo",
       descriere: "Blat cu nucă măcinată, cremă de cacao cu unt și glazură.",
       bucata: 11, kg: 82,
-      desen: { tip: "felie", straturi: [["#a87a4f", 16], ["#6e3f26", 22], ["#a87a4f", 16], ["#3b2014", 8]], decor: "nuca" },
     },
     {
       id: "placinta", nume: "Plăcintă cu mere", grup: "tara", culoare: "verde-sos",
       descriere: "Aluat fraged cu unt, mere rase, scorțișoară și zahăr vanilat.",
       bucata: 7, kg: 55,
-      desen: { tip: "felie", straturi: [["#e2b066", 12], ["#efd28c", 30], ["#e2b066", 12]], decor: "pudra" },
     },
     {
       id: "lamaita", nume: "Lămâiță", grup: "crema", culoare: "bleu",
       descriere: "Foi fragede și cremă de lămâie cu unt, răcoritoare.",
       bucata: 9, kg: 70,
-      desen: { tip: "felie", straturi: [["#e6bb73", 9], ["#fbe58a", 20], ["#e6bb73", 9], ["#fbe58a", 20], ["#e6bb73", 9]], decor: "pudra" },
     },
     {
       id: "negresa", nume: "Negresă cu nucă", grup: "nuca", culoare: "albastru",
       descriere: "Blat umed de cacao cu bucăți de nucă și glazură de ciocolată.",
       bucata: 8, kg: 65,
-      desen: { tip: "felie", straturi: [["#4a2a1b", 40], ["#2a160e", 8]], decor: "nuca" },
     },
     {
       id: "chec", nume: "Chec marmorat", grup: "tara", culoare: "portocaliu",
       descriere: "Chec cu unt, vanilie și cacao, ca la bunica duminica.",
       bucata: 6, kg: 48, unitateBucata: "felie",
-      desen: { tip: "chec" },
     },
   ];
 

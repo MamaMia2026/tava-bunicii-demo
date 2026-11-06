@@ -24,7 +24,14 @@
       chipPret: c.inchis ? "background:rgba(255,255,255,.14)" : "background:rgba(255,255,255,.55)",
     };
   }
-  const farfurie = (p, extra) => `<span class="farfurie ${extra || ""}"><span class="farfurie__disc">${DESEN.produs(p)}</span></span>`;
+  /* poza rotundă (img/<id>-400|800.webp), decupată cu object-fit: cover; `decor` = fără text alternativ */
+  const poza = (id, sizes, alt) =>
+    `<img src="img/${id}-400.webp" srcset="img/${id}-400.webp 400w, img/${id}-800.webp 800w" sizes="${sizes}" width="400" height="400" loading="lazy" decoding="async" alt="${escape(alt)}">`;
+  const farfurie = (p, sizes, decor) =>
+    `<span class="farfurie"><span class="farfurie__disc">${poza(p.poza || p.id, sizes || "120px", decor ? "" : p.nume)}</span></span>`;
+  const patrat = (l) => l.poza
+    ? `<img class="patrat" src="img/${l.poza}-400.webp" width="400" height="400" loading="lazy" decoding="async" alt="">`
+    : `<span class="patrat" style="background:${l.culoare}" aria-hidden="true">${l.emoji || ""}</span>`;
   const unitateBucata = (p) => p.unitateBucata || "buc.";
 
   /* ================= Stocare (cu try/catch: merge și fără localStorage) ================= */
@@ -92,7 +99,7 @@
     adaugaLinie({
       cheie: `${id}:${unitate}`, tip: "produs", id, nume: p.nume,
       detaliu: kg ? "1 kg" : `1 ${unitateBucata(p) === "felie" ? "felie" : "bucată"}`,
-      unitate, pret: kg ? p.kg : p.bucata, culoare: CULORI[p.culoare].fundal,
+      unitate, pret: kg ? p.kg : p.bucata, culoare: CULORI[p.culoare].fundal, poza: p.id,
     }, 1);
     toast(`${p.nume} ${kg ? "(1 kg) " : ""}e în coș`);
   }
@@ -119,7 +126,6 @@
 
   /* ================= Logo, hero ================= */
   $$("[data-emblema]").forEach((el) => { el.innerHTML = DESEN.emblema(); });
-  $("[data-tava]").innerHTML = DESEN.tava();
 
   const vedeta = dupaId.cremsnit;
   $("[data-card-rapid]").innerHTML = `
@@ -133,7 +139,7 @@
   $("[data-favorite]").innerHTML = favorite.map((p, i) => {
     const s = stilCard(p.culoare);
     return `<article class="card-pref grup" style="${s.card}">
-      <div class="card-pref__poza">${farfurie(p)}</div>
+      <div class="card-pref__poza">${farfurie(p, "(max-width: 767px) 220px, 320px")}</div>
       <div class="card-pref__corp">
         <span class="card-pref__nr">N° ${String(i + 1).padStart(2, "0")}${p.eticheta ? " · " + p.eticheta : ""}</span>
         <h3 class="titlu card-pref__nume">${p.nume}</h3>
@@ -158,7 +164,7 @@
           const s = stilCard(p.culoare);
           const kg = unitate === "kg";
           return `<article class="card-meniu grup" style="${s.card}">
-            <span class="card-meniu__poza">${farfurie(p)}</span>
+            <span class="card-meniu__poza">${farfurie(p, "(max-width: 767px) 96px, 114px")}</span>
             <h4 class="titlu card-meniu__nume">${p.nume}</h4>
             <p class="card-meniu__desc">${p.descriere}</p>
             <div class="card-meniu__jos">
@@ -197,7 +203,7 @@
 
   /* ================= 4. Fă-ți platoul ================= */
   const platou = { ocazie: OCAZII[0].id, persoane: PLATOU.implicit };
-  $("[data-disc-platou]").innerHTML = farfurie(dupaId.amandine);
+  $("[data-disc-platou]").innerHTML = farfurie(dupaId.amandine, "(max-width: 767px) 96px, 160px", true);
 
   function calculeazaPlatou() {
     const o = OCAZII.find((x) => x.id === platou.ocazie);
@@ -242,7 +248,7 @@
     $("[data-nota-ocazie]").textContent = `${r.o.nota} Calculăm ${r.o.perPersoana} prăjituri de persoană. De la 40 de persoane ai 5% reducere, de la 80, 10%.`;
     $("[data-bon-titlu]").textContent = `Platou de ${r.o.nume.toLowerCase()}`;
     $("[data-bon-linii]").innerHTML = r.linii.map((l) => `
-      <li class="bon__linie">${farfurie(l.produs)}
+      <li class="bon__linie">${farfurie(l.produs, "44px", true)}
         <span class="bon__linie-nume"><b>${l.produs.nume}</b><span>${l.buc} buc. × ${lei(l.produs.bucata)}</span></span>
         <span class="bon__linie-pret">${lei(l.pret)}</span></li>`).join("");
     $("[data-bon-info]").innerHTML = `<span>${r.total} bucăți</span><span>≈ ${r.kg.toFixed(1).replace(".", ",")} kg</span><span>${plural(r.tavi, "tavă", "tăvi")}</span>` +
@@ -258,7 +264,7 @@
       cheie: `platou:${platou.ocazie}:${platou.persoane}`, tip: "platou", id: "platou",
       nume: `Platou de ${r.o.nume.toLowerCase()}`,
       detaliu: `${platou.persoane} persoane · ${r.total} buc. · ${r.linii.map((l) => l.produs.nume).join(", ")}`,
-      pret: r.final, culoare: "#e8432e", emoji: r.o.emoji,
+      pret: r.final, culoare: "#e8432e", emoji: r.o.emoji, poza: r.linii[0].produs.id,
     }, 1);
     toast(`Platoul pentru ${platou.persoane} persoane e în coș`);
   });
@@ -295,7 +301,7 @@
 
   /* ================= 8. Cozonac de Crăciun ================= */
   const craciun = { varianta: CRACIUN.variante[0].id, cantitate: 1 };
-  $("[data-disc-craciun]").innerHTML = farfurie(dupaId.cozonac);
+  $("[data-disc-craciun]").innerHTML = farfurie({ poza: "cozonac-craciun", nume: "Cozonac de Crăciun" }, "(max-width: 767px) 150px, 190px");
   $("[data-variante]").innerHTML = CRACIUN.variante.map((v) => `
     <button type="button" class="varianta" role="radio" aria-checked="${v.id === craciun.varianta}" data-varianta="${v.id}">
       <span class="bifa" aria-hidden="true"></span><span class="varianta__nume">${v.nume}</span><span class="varianta__pret">${lei(v.pret)}</span>
@@ -331,7 +337,7 @@
     if (n <= 0) return;
     adaugaLinie({
       cheie: v.id, tip: "craciun", id: v.id, nume: "Cozonac de Crăciun", detaliu: `${v.nume} · 1 kg · livrare ${CRACIUN.livrare}`,
-      pret: v.pret, culoare: "#2f6b4a", emoji: "🎄",
+      pret: v.pret, culoare: "#2f6b4a", emoji: "🎄", poza: "cozonac-craciun",
     }, n);
     toast(`${plural(n, "cozonac rezervat", "cozonaci rezervați")} în coș`);
     craciun.cantitate = 1;
@@ -360,7 +366,7 @@
       <h3 class="titlu">Coșul tău</h3>
       ${linii.length === 0 ? `<p class="mini-cos__gol">Coșul e gol. Apasă „+” pe orice prăjitură ca s-o adaugi.</p>` : `
       <ul>${linii.slice(0, 4).map((l) => `
-        <li><span class="patrat" style="background:${l.culoare}" aria-hidden="true"></span>
+        <li>${patrat(l)}
           <div class="mini-cos__nume"><p>${l.cantitate > 1 ? `<span style="color:var(--gri-2)">${l.cantitate}× </span>` : ""}${escape(l.nume)}</p><p>${escape(l.detaliu)}</p></div>
           <span class="mini-cos__pret">${lei(l.pret * l.cantitate)}</span></li>`).join("")}
         ${linii.length > 4 ? `<li style="font-size:14px;color:var(--gri-2)">+ încă ${linii.length - 4} produse în coș</li>` : ""}
@@ -430,7 +436,7 @@
       <div class="cos__bloc">
         ${stare.linii.map((l, i) => `
           <div class="rand-cos">
-            <span class="patrat" style="background:${l.culoare}" aria-hidden="true">${l.emoji || ""}</span>
+            ${patrat(l)}
             <div class="rand-cos__info"><b>${escape(l.nume)}</b><small>${escape(l.detaliu)}</small>
               <div class="qty"><button type="button" data-cant="${i}" data-pas="-1" aria-label="Scade cantitatea pentru ${escape(l.nume)}">−</button><b>${l.cantitate}</b><button type="button" data-cant="${i}" data-pas="1" aria-label="Crește cantitatea pentru ${escape(l.nume)}">+</button></div>
             </div>
