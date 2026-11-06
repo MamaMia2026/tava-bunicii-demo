@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tava Bunicii · Prăjituri de casă în Timișoara</title>
+  <meta name="description" content="Prăjituri de casă coapte joi, vineri și sâmbătă. Cremșnit, amandine, cozonac cu nucă. Ridicare din Giroc sau livrare în Timișoara. Machetă demo.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f4f1ec">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="banner-demo" role="note"><span class="punct" aria-hidden="true"></span>Machetă demonstrativă · comenzile nu sunt reale</div>
+
+  <!-- ===== Navigație ===== -->
+  <header class="antet">
+    <div class="nav-desktop">
+      <nav class="nav" aria-label="Principal">
+        <a href="#" class="logo" aria-label="Tava Bunicii – sus"><span class="logo__emblema" data-emblema></span><span class="logo__text"><b>Tava Bunicii</b><small>prăjituri de casă</small></span></a>
+        <div class="nav__linkuri">
+          <a href="#meniu">Prăjituri</a>
+          <a href="#platou">Fă-ți platoul</a>
+          <a href="#ingrediente">Ingrediente</a>
+          <a href="#livrare">Livrare</a>
+          <a href="#craciun">Crăciun</a>
+        </div>
+        <div class="nav__actiuni">
+          <a class="pill pill--crem nav__tel" href="tel:+40722198198">0722 198 198</a>
+          <button type="button" class="pill pill--negru" data-deschide-cos>Coș <span class="badge" data-numar-cos>0</span></button>
+        </div>
+      </nav>
+    </div>
+    <div class="nav-mobil">
+      <a href="#" class="logo logo--mic" aria-label="Tava Bunicii – sus"><span class="logo__emblema" data-emblema></span><span class="logo__text"><b>Tava Bunicii</b><small>prăjituri de casă</small></span></a>
+      <div class="nav-mobil__actiuni">
+        <button type="button" class="pill pill--negru pill--sm" data-deschide-cos>Coș <span class="badge" data-numar-cos>0</span></button>
+        <button type="button" class="buton-meniu" aria-expanded="false" aria-controls="meniu-mobil" aria-label="Deschide meniul" data-buton-meniu>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#141110" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+      <div id="meniu-mobil" class="meniu-mobil anim-apare" hidden>
+        <a href="#meniu">Prăjituri</a>
+        <a href="#platou">Fă-ți platoul</a>
+        <a href="#ingrediente">Ingrediente</a>
+        <a href="#livrare">Livrare</a>
+        <a href="#craciun">Cozonac de Crăciun</a>
+        <a class="pill pill--crem pill--sm" href="tel:+40722198198">Sună: 0722 198 198</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="continut">
+    <!-- ===== 1. Hero ===== -->
+    <section class="hero-sectiune">
+      <div class="panel hero">
+        <div class="hero__media" aria-hidden="true">
+          <div class="hero__aburi"><span></span><span></span><span></span></div>
+          <div class="hero__tava" data-tava></div>
+        </div>
+        <div class="hero__text">
+          <span class="chip chip--sticla hero__eticheta">Prăjituri de casă în Timișoara · din 1998</span>
+          <h1 class="titlu hero__titlu">Spune ce-ți e poftă. <span>Bunica coace.</span></h1>
+          <p class="hero__lead">Prăjituri de tavă după rețetele bunicii, cu unt, ouă de țară și nucă adevărată. Coacem la comandă și ți le aducem acasă.</p>
+          <div class="hero__butoane">
+            <a href="#meniu" class="pill pill--alb pill--hero" data-comanda-acum>Comandă acum</a>
+            <a href="#favorite" class="pill pill--contur-alb pill--hero">Vezi prăjiturile</a>
+          </div>
+        </div>
+        <div class="hero__chipuri">
+          <span class="chip chip--sticla">0 lei livrare peste 200 lei</span>
+          <span class="chip chip--sticla">Joi – sâmbătă, din cuptor</span>
+        </div>
+        <div class="card-rapid" data-card-rapid></div>
+      </div>
+    </section>
+
+    <!-- ===== 2. Bandă ===== -->
+    <section class="banda-sectiune" aria-label="Program și livrare">
+      <div class="banda">
+        <div class="banda__pista">
+          <span>Coacem joi, vineri și sâmbătă</span><i></i><span>Livrare gratuită peste 200 lei</span><i></i>
+          <span>Coacem joi, vineri și sâmbătă</span><i></i><span>Livrare gratuită peste 200 lei</span><i></i>
+          <span aria-hidden="true">Coacem joi, vineri și sâmbătă</span><i></i><span aria-hidden="true">Livrare gratuită peste 200 lei</span><i></i>
+          <span aria-hidden="true">Coacem joi, vineri și sâmbătă</span><i></i><span aria-hidden="true">Livrare gratuită peste 200 lei</span><i></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3. Favoritele bunicii ===== -->
+    <section id="favorite" class="preferate">
+      <div class="preferate__cap">
+        <h2 class="titlu titlu-sectiune">Favoritele<span class="bloc-md"> bunicii.</span></h2>
+        <p class="preferate__desc">Cele mai comandate prăjituri din Timișoara. Alege bucata sau kilogramul, adaugă în coș și gata.</p>
+      </div>
+      <div class="preferate__lista fara-scrollbar" data-favorite></div>
+    </section>
+
+    <!-- ===== 4. Fă-ți platoul ===== -->
+    <section id="platou" class="sectiune-platou">
+      <button type="button" class="banner-platou" data-deschide-platou aria-expanded="false" aria-controls="configurator-platou">
+        <span class="banner-platou__disc" aria-hidden="true" data-disc-platou></span>
+        <span class="banner-platou__text">
+          <span class="supratitlu">Platou la comandă</span>
+          <span class="titlu banner-platou__titlu">Fă-ți platoul. Bunica îl umple.</span>
+          <span class="banner-platou__sub">Alegi ocazia și câte persoane sunteți. Mixul și prețul se calculează pe loc.</span>
+          <span class="banner-platou__cta">Creează-ți platoul <span aria-hidden="true">→</span></span>
+        </span>
+      </button>
+
+      <div id="configurator-platou" class="configurator" hidden>
+        <div class="configurator__stanga">
+          <div class="pas">
+            <span class="pas__numar">01</span>
+            <h3 class="titlu pas__titlu">Pentru ce ocazie?</h3>
+          </div>
+          <div class="ocazii" role="radiogroup" aria-label="Ocazia" data-ocazii></div>
+
+          <div class="pas">
+            <span class="pas__numar">02</span>
+            <h3 class="titlu pas__titlu">Câte persoane?</h3>
+          </div>
+          <div class="persoane">
+            <button type="button" class="persoane__buton" data-persoane="-" aria-label="Mai puține persoane">−</button>
+            <output class="titlu persoane__valoare" data-persoane-valoare aria-live="polite">30</output>
+            <button type="button" class="persoane__buton" data-persoane="+" aria-label="Mai multe persoane">+</button>
+            <input type="range" class="persoane__glisor" min="10" max="150" step="5" value="30" aria-label="Număr de persoane" data-persoane-glisor>
+          </div>
+          <p class="configurator__nota" data-nota-ocazie></p>
+        </div>
+
+        <div class="bon" aria-live="polite">
+          <div class="bon__cap">
+            <span class="supratitlu supratitlu--gri">03 · Mixul tău</span>
+            <h3 class="titlu bon__titlu" data-bon-titlu>Platou de botez</h3>
+          </div>
+          <ul class="bon__linii" data-bon-linii></ul>
+          <div class="bon__info" data-bon-info></div>
+          <div class="bon__total">
+            <span>Total</span>
+            <span class="titlu" data-bon-total>0 lei</span>
+          </div>
+          <p class="bon__perpers" data-bon-perpers></p>
+          <button type="button" class="pill pill--rosu pill--lg" data-adauga-platou>Adaugă platoul în coș</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 5. Meniul complet ===== -->
+    <section id="meniu" class="meniu">
+      <aside class="meniu__lateral">
+        <h2 class="titlu meniu__titlu">Prăjituri<span class="rosu">.</span></h2>
+        <p class="meniu__desc">12 prăjituri de tavă, la bucată sau la kilogram. Comanzi până cu o zi înainte de ziua de copt.</p>
+        <div class="taburi" role="tablist" aria-label="Unitate de măsură" data-taburi-unitate>
+          <button type="button" role="tab" aria-selected="true" data-unitate="bucata">La bucată</button>
+          <button type="button" role="tab" aria-selected="false" data-unitate="kg">La kilogram</button>
+        </div>
+        <span class="meniu__eticheta">ALEGE DUPĂ GUST</span>
+        <nav class="meniu__grupuri fara-scrollbar" aria-label="Alege după gust" data-grupuri-nav></nav>
+        <div class="card-intrebare">
+          <span class="card-intrebare__icon" aria-hidden="true">🥮</span>
+          <p class="titlu card-intrebare__titlu">Ai o masă mare?</p>
+          <p class="card-intrebare__text">Spune-ne ocazia și câte persoane vin. Îți facem noi mixul, pe platou.</p>
+          <a href="#platou" class="pill pill--alb pill--h48" data-deschide-platou-link>Fă-ți platoul</a>
+        </div>
+        <div class="mini-cos" data-mini-cos></div>
+      </aside>
+      <div class="meniu__continut" data-meniu-grupuri></div>
+    </section>
+
+    <!-- ===== 6. Ce punem în tavă ===== -->
+    <section id="ingrediente" class="bento-sectiune">
+      <h2 class="titlu titlu-sectiune">Ce punem<span class="bloc-md"> în tavă.</span></h2>
+      <div class="bento">
+        <div class="panel bento__mare">
+          <div class="bento__ilustratie" aria-hidden="true">
+            <div class="unt"><span></span></div>
+          </div>
+          <div class="bento__text">
+            <h3 class="titlu">Unt adevărat,<br>82% grăsime.</h3>
+            <p>Nici margarină, nici „produs vegetal”. Doar unt, ca în caietul de rețete al bunicii.</p>
+          </div>
+        </div>
+        <div class="bento__duo">
+          <div class="bento__mic bento__mic--oua">
+            <span class="bento__emoji" aria-hidden="true">🥚</span>
+            <h3 class="titlu">Ouă de țară</h3>
+            <span class="chip chip--alb">De la ferma din Moșnița</span>
+          </div>
+          <div class="bento__mic bento__mic--nuca">
+            <span class="bento__emoji" aria-hidden="true">🌰</span>
+            <h3 class="titlu">Nucă din Banat</h3>
+            <span class="chip chip--alb">Spartă de mână</span>
+          </div>
+        </div>
+        <div class="panel bento__alb bento__miere">
+          <div class="bento__miere-cap">
+            <span class="bento__eticheta">Miere de salcâm</span>
+            <p class="bento__miere-sub">de la stupina familiei Ardelean, Recaș</p>
+          </div>
+          <span class="titlu bento__cifra">0 g</span>
+          <p class="bento__miere-text">zahăr invertit sau arome artificiale. Foile de „Albă ca zăpada” se îndulcesc doar cu miere.</p>
+        </div>
+        <div class="panel bento__alb bento__citat">
+          <span class="bento__eticheta">Ce spun clienții</span>
+          <p class="titlu">„Cremșnitul are exact gustul de la bunica din Lugoj. Am comandat și pentru botez.”</p>
+          <span class="bento__autor">Ioana M.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 7. Ziua de copt și livrarea ===== -->
+    <section id="livrare" class="livrare-sectiune">
+      <div class="panel livrare">
+        <div class="livrare__cap">
+          <span class="supratitlu supratitlu--coral">Ziua de copt și livrarea</span>
+          <h2 class="titlu livrare__titlu">Alegi ziua.<br>Noi pornim cuptorul.</h2>
+          <p class="livrare__desc">Coacem doar joi, vineri și sâmbătă, câte 30 de comenzi pe zi. Rezervă un loc, apoi alegi dacă ridici din Giroc sau ți le aducem noi.</p>
+        </div>
+        <div class="zile fara-scrollbar" role="radiogroup" aria-label="Ziua de copt" data-zile></div>
+        <div class="livrare__moduri">
+          <button type="button" class="mod" role="radio" aria-checked="true" data-mod="livrare">
+            <span class="mod__icon" aria-hidden="true">🛵</span>
+            <span class="mod__corp">
+              <span class="titlu mod__titlu">Livrare acasă</span>
+              <span class="mod__text">Timișoara, Giroc, Dumbrăvița, Moșnița, Chișoda. <b>Gratuit peste 200 lei</b>, altfel 15 lei.</span>
+            </span>
+            <span class="bifa" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="mod" role="radio" aria-checked="false" data-mod="ridicare">
+            <span class="mod__icon" aria-hidden="true">🏡</span>
+            <span class="mod__corp">
+              <span class="titlu mod__titlu">Ridicare din Giroc</span>
+              <span class="mod__text">Str. Trandafirilor 12, între 9:00 și 18:00. <b>Mereu 0 lei.</b></span>
+            </span>
+            <span class="bifa" aria-hidden="true"></span>
+          </button>
+        </div>
+        <p class="livrare__ales" data-zi-aleasa></p>
+      </div>
+    </section>
+
+    <!-- ===== 8. Precomandă cozonac de Crăciun ===== -->
+    <section id="craciun" class="craciun-sectiune">
+      <div class="panel craciun">
+        <div class="craciun__stanga">
+          <span class="chip chip--sticla craciun__chip">Precomandă · se livrează 22 – 23 decembrie</span>
+          <h2 class="titlu craciun__titlu">Cozonacul de Crăciun<span class="bloc-md"> se rezervă acum.</span></h2>
+          <p class="craciun__desc">Coacem o singură tură, 200 de cozonaci de 1 kg, în cuptorul cu vatră. Când se termină, se termină.</p>
+          <div class="stoc">
+            <div class="stoc__cifre"><span class="titlu" data-stoc-rezervati>162</span><span>/ 200 rezervați</span></div>
+            <div class="stoc__bara" role="progressbar" aria-label="Cozonaci rezervați" aria-valuemin="0" aria-valuemax="200" aria-valuenow="162" data-stoc-bara><span data-stoc-umplere></span></div>
+            <p class="stoc__ramas" data-stoc-ramas>Mai sunt 38 de cozonaci.</p>
+          </div>
+        </div>
+        <div class="craciun__card">
+          <div class="craciun__disc" aria-hidden="true" data-disc-craciun></div>
+          <div class="variante" role="radiogroup" aria-label="Umplutura" data-variante></div>
+          <div class="craciun__jos">
+            <div class="qty" data-qty-craciun>
+              <button type="button" data-qty="-" aria-label="Mai puțini cozonaci">−</button>
+              <b data-qty-valoare aria-live="polite">1</b>
+              <button type="button" data-qty="+" aria-label="Mai mulți cozonaci">+</button>
+            </div>
+            <button type="button" class="pill pill--rosu pill--md craciun__buton" data-rezerva>Rezervă · <span data-pret-craciun>65 lei</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== 9. Footer ===== -->
+  <footer class="subsol">
+    <div class="subsol__panou">
+      <div class="subsol__sus">
+        <span class="logo logo--subsol"><span class="logo__emblema" data-emblema></span><span class="logo__text"><b>Tava Bunicii</b><small>prăjituri de casă · din 1998</small></span></span>
+        <a href="#meniu" class="pill pill--rosu pill--lg">Comandă acum</a>
+      </div>
+      <div class="subsol__coloane">
+        <div class="coloana"><span class="coloana__titlu">Laborator</span><span>Str. Trandafirilor 12</span><span>Giroc, jud. Timiș</span></div>
+        <div class="coloana"><span class="coloana__titlu">Program</span><span>Coacem joi – sâmbătă</span><span>Ridicare 9:00 – 18:00</span></div>
+        <div class="coloana"><span class="coloana__titlu">Contact</span><a href="tel:+40722198198">0722 198 198</a><span>comenzi@tavabunicii.ro</span><a href="#livrare">Zile de copt & livrare</a></div>
+        <div class="coloana"><span class="coloana__titlu">Prăjituri</span><a href="#favorite">Favoritele bunicii</a><a href="#platou">Platouri pentru evenimente</a><a href="#craciun">Cozonac de Crăciun</a></div>
+      </div>
+      <div class="subsol__jos">
+        <span>© 2026 Tava Bunicii · brand fictiv, creat pentru demonstrație</span>
+        <span>Machetă demo · Site realizat de <a href="https://cristianweb.ro" target="_blank" rel="noopener">CristianWeb</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Bara fixă de jos (mobil) ===== -->
+  <div class="bara-mobil" data-bara-mobil>
+    <a href="#platou" class="pill pill--negru" data-deschide-platou-link>🥮 Fă-ți platoul</a>
+    <button type="button" class="pill pill--rosu" data-deschide-cos data-bara-cos>Coș · 0 lei</button>
+  </div>
+
+  <!-- ===== Coșul (sertar) ===== -->
+  <div class="cos-fundal" data-cos-fundal hidden></div>
+  <aside class="cos" role="dialog" aria-modal="true" aria-labelledby="cos-titlu" data-cos hidden>
+    <div class="cos__cap">
+      <h2 id="cos-titlu" class="titlu">Coșul tău</h2>
+      <button type="button" class="buton-inchide" aria-label="Închide coșul" data-inchide-cos>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#141110" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="cos__corp" data-cos-corp></div>
+  </aside>
+
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+
+  <script src="js/date.js"></script>
+  <script src="js/desen.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
